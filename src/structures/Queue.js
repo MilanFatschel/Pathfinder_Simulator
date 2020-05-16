@@ -1,6 +1,6 @@
 // Custom queue implementation
 
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class Queue extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class Queue extends Component {
 
   isEmpty() {
     // return true if the queue is empty.
-    return this.state.items.length == 0;
+    return this.state.items.length === 0;
   }
 
   render() {

@@ -19,6 +19,7 @@ export default class AboutToggleObstacles extends Component {
         <img
           className="tutorial-image"
           src={require("./../../gifs/toggleobstacle.gif")}
+          alt="Toggle obstacle example"
         ></img>
         <div className="page">3/12</div>
         <button

@@ -18,6 +18,7 @@ export default class ClearObstacles extends Component {
         <img
           className="button-image"
           src={require("./../../gifs/reset.gif")}
+          alt="Reset example"
         ></img>
         <div className="page">10/12</div>
         <button

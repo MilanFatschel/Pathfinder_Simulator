@@ -22,6 +22,7 @@ export default class Conclusion extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub Link
           </a>

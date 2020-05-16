@@ -15,6 +15,7 @@ export default class AboutGBF extends Component {
         <img
           className="algorithm-image"
           src={require("./../../gifs/gbfslow.gif")}
+          alt="GBF example"
         ></img>
         <p className="paragraph">
           Greedy-Best-First aims to find a path from the start node to the end
@@ -36,6 +37,7 @@ export default class AboutGBF extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/GreedyBestFirst.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Greedy-Best-First
           </a>

@@ -73,7 +73,7 @@ export function astar(grid, startNode, endNode) {
 
           // If a node neighbor is the end node
           // we are finished
-          if (nodeNeighbor == endNode) return visitedNodes;
+          if (nodeNeighbor === endNode) return visitedNodes;
         }
       }
     } else {

@@ -38,7 +38,7 @@ export function dfs(grid, startNode, endNode) {
 
       // push nodes visited into list for rendering
       // keep start and end nodes out of list
-      if (currentNode != startNode && currentNode != endNode)
+      if (currentNode !== startNode && currentNode !== endNode)
         visitedNodes.push(currentNode);
 
       for (var i = 0; i < currentNode.neighborNodes.length; i++) {
@@ -55,7 +55,7 @@ export function dfs(grid, startNode, endNode) {
 
           // If a node neighbor is the end node
           // we are finished
-          if (nodeNeighbor == endNode) return visitedNodes;
+          if (nodeNeighbor === endNode) return visitedNodes;
         }
       }
     } else {

@@ -19,6 +19,7 @@ export default class RandomizeObstacles extends Component {
         <img
           className="button-image"
           src={require("./../../gifs/randomize.gif")}
+          alt="Randomize obstacle example"
         ></img>
         <div className="page">11/12</div>
         <button

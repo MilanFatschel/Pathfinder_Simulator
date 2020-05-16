@@ -1,10 +1,3 @@
-TODO:
-
-- Add randomizer
-- clear path only
-- add tutorials
-- add mazes?
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

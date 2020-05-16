@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 export default class NavigationBar extends Component {
   constructor(props) {
@@ -23,11 +23,11 @@ export default class NavigationBar extends Component {
   // Drop Down Menu Toggles
   showDropdown(e, dropdown) {
     e.preventDefault();
-    if (dropdown == "algorithm") this.setState({ activeDropDown: "algorithm" });
-    else if (dropdown == "speed") this.setState({ activeDropDown: "speed" });
-    else if (dropdown == "aboutAlgo")
+    if (dropdown === "algorithm") this.setState({ activeDropDown: "algorithm" });
+    else if (dropdown === "speed") this.setState({ activeDropDown: "speed" });
+    else if (dropdown === "aboutAlgo")
       this.setState({ activeDropDown: "aboutAlgo" });
-    else if (dropdown == "aboutStruct")
+    else if (dropdown === "aboutStruct")
       this.setState({ activeDropDown: "aboutStruct" });
   }
 
@@ -52,45 +52,45 @@ export default class NavigationBar extends Component {
     // Algorithm Drop Down
     const classAlgoDropdownMenu =
       "dropdown-menu" +
-      (this.state.activeDropDown == "algorithm" ? " show" : "");
+      (this.state.activeDropDown === "algorithm" ? " show" : "");
     const classAstarActive =
-      "dropdown-item" + (this.props.activeAlgorithm == "A*" ? " active" : "");
+      "dropdown-item" + (this.props.activeAlgorithm === "A*" ? " active" : "");
     const classDijkstraActive =
       "dropdown-item" +
-      (this.props.activeAlgorithm == "Dijkstra" ? " active" : "");
+      (this.props.activeAlgorithm === "Dijkstra" ? " active" : "");
     const classGBFActive =
-      "dropdown-item" + (this.props.activeAlgorithm == "GBF" ? " active" : "");
+      "dropdown-item" + (this.props.activeAlgorithm === "GBF" ? " active" : "");
     const classBFSActive =
-      "dropdown-item" + (this.props.activeAlgorithm == "BFS" ? " active" : "");
+      "dropdown-item" + (this.props.activeAlgorithm === "BFS" ? " active" : "");
     const classDFSActive =
-      "dropdown-item" + (this.props.activeAlgorithm == "DFS" ? " active" : "");
+      "dropdown-item" + (this.props.activeAlgorithm === "DFS" ? " active" : "");
 
     // Speed Adjustment Dropdown
     const classSpeedDropdownMenu =
-      "dropdown-menu" + (this.state.activeDropDown == "speed" ? " show" : "");
+      "dropdown-menu" + (this.state.activeDropDown === "speed" ? " show" : "");
     const classSpeed25Active =
-      "dropdown-item" + (this.props.simulatorSpeed == 0.25 ? " active" : "");
+      "dropdown-item" + (this.props.simulatorSpeed === 0.25 ? " active" : "");
     const classSpeed50Active =
-      "dropdown-item" + (this.props.simulatorSpeed == 0.5 ? " active" : "");
+      "dropdown-item" + (this.props.simulatorSpeed === 0.5 ? " active" : "");
     const classSpeed75Active =
-      "dropdown-item" + (this.props.simulatorSpeed == 0.75 ? " active" : "");
+      "dropdown-item" + (this.props.simulatorSpeed === 0.75 ? " active" : "");
     const classSpeed100Active =
-      "dropdown-item" + (this.props.simulatorSpeed == 1.0 ? " active" : "");
+      "dropdown-item" + (this.props.simulatorSpeed === 1.0 ? " active" : "");
     const classSpeed200Active =
-      "dropdown-item" + (this.props.simulatorSpeed == 2.0 ? " active" : "");
+      "dropdown-item" + (this.props.simulatorSpeed === 2.0 ? " active" : "");
     const classSpeed400Active =
-      "dropdown-item" + (this.props.simulatorSpeed == 4.0 ? " active" : "");
+      "dropdown-item" + (this.props.simulatorSpeed === 4.0 ? " active" : "");
     // End Speed Dropdown
 
     // About Algorithms Dropdown
     const classAboutAlgoDropdownMenu =
       "dropdown-menu" +
-      (this.state.activeDropDown == "aboutAlgo" ? " show" : "");
+      (this.state.activeDropDown === "aboutAlgo" ? " show" : "");
 
     // About Data Structures Structures DropDown
     const classAboutStructDropdownMenu =
       "dropdown-menu" +
-      (this.state.activeDropDown == "aboutStruct" ? " show" : "");
+      (this.state.activeDropDown === "aboutStruct" ? " show" : "");
 
     return (
       <div ref={(node) => (this.node = node)}>
@@ -115,7 +115,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item dropdown">
                 <a
                   class={classNavBarLink}
-                  href="#"
+                  href="/#"
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -129,12 +129,12 @@ export default class NavigationBar extends Component {
                 </a>
                 <div
                   className={classAlgoDropdownMenu}
-                  href="#"
+                  href="/#"
                   aria-labelledby="navbarDropdown"
                 >
                   <a
                     className={classAstarActive}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "A*");
                       this.setState({ activeDropDown: null });
@@ -144,7 +144,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classDijkstraActive}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "Dijkstra");
                       this.setState({ activeDropDown: null });
@@ -154,7 +154,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classGBFActive}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "GBF");
                       this.setState({ activeDropDown: null });
@@ -164,7 +164,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classBFSActive}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "BFS");
                       this.setState({ activeDropDown: null });
@@ -174,7 +174,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classDFSActive}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "DFS");
                       this.setState({ activeDropDown: null });
@@ -187,7 +187,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item dropdown">
                 <a
                   className={classNavBarLink}
-                  href="#"
+                  href="/#"
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -205,7 +205,7 @@ export default class NavigationBar extends Component {
                 >
                   <a
                     className={classSpeed25Active}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 0.25);
                       this.setState({ activeDropDown: null });
@@ -215,7 +215,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed50Active}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 0.5);
                       this.setState({ activeDropDown: null });
@@ -225,7 +225,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed75Active}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 0.75);
                       this.setState({ activeDropDown: null });
@@ -235,7 +235,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed100Active}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 1.0);
                       this.setState({ activeDropDown: null });
@@ -245,7 +245,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed200Active}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 2.0);
                       this.setState({ activeDropDown: null });
@@ -255,7 +255,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed400Active}
-                    href="#"
+                    href="/#"
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 4.0);
                       this.setState({ activeDropDown: null });
@@ -268,7 +268,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item dropdown">
                 <a
                   className={classNavBarLink}
-                  href="#"
+                  href="/#"
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -286,7 +286,7 @@ export default class NavigationBar extends Component {
                 >
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("A*");
                       this.setState({ activeDropDown: null });
@@ -296,7 +296,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("Dijkstra");
                       this.setState({ activeDropDown: null });
@@ -306,7 +306,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("GBF");
                       this.setState({ activeDropDown: null });
@@ -316,7 +316,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("BFS");
                       this.setState({ activeDropDown: null });
@@ -326,7 +326,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("DFS");
                       this.setState({ activeDropDown: null });
@@ -339,7 +339,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item dropdown">
                 <a
                   className={classNavBarLink}
-                  href="#"
+                  href="/#"
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -357,7 +357,7 @@ export default class NavigationBar extends Component {
                 >
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutDataStructure("Stack");
                       this.setState({ activeDropDown: null });
@@ -367,7 +367,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutDataStructure("Queue");
                       this.setState({ activeDropDown: null });
@@ -377,7 +377,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="#"
+                    href="/#"
                     onClick={() => {
                       this.props.onClickAboutDataStructure("Heap");
                       this.setState({ activeDropDown: null });
@@ -390,7 +390,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item">
                 <a
                   className={classNavButton}
-                  href="#"
+                  href="/#"
                   onClick={(e) => {
                     this.props.createTutorialEvent();
                     this.setState({ activeDropDown: null });

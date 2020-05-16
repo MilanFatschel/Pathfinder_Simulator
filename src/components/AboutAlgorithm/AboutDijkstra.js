@@ -15,6 +15,7 @@ export default class AboutDijkstra extends Component {
         <img
           className="algorithm-image"
           src={require("./../../gifs/dijkstraslow.gif")}
+          alt="Dijkstra example"
         ></img>
         <p className="paragraph">
           Dijkstra aims to find the shortest path from the start node to the end
@@ -36,6 +37,7 @@ export default class AboutDijkstra extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/Dijkstra.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Dijkstra
           </a>

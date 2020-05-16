@@ -15,6 +15,7 @@ export default class AboutQueue extends Component {
         <img
           className="queue-image"
           src={require("./../../gifs/queue.gif")}
+          alt="Queue example"
         ></img>
         <p className="paragraph">
           The queue resembles that of the "first-come, first-serve" or a line of
@@ -31,6 +32,7 @@ export default class AboutQueue extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/structures/Queue.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Queue
           </a>

@@ -15,6 +15,7 @@ export default class AboutPathFinding extends Component {
         <img
           className="small-image"
           src={require("./../../gifs/bfs.gif")}
+          alt="Pathfinding"
         ></img>
         <p className="paragraph">
           Pathfinding algorithms seek to find a path from a starting point to an

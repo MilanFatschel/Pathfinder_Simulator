@@ -15,6 +15,7 @@ export default class AboutAstar extends Component {
         <img
           className="algorithm-image"
           src={require("./../../gifs/astarslow.gif")}
+          alt="A* example"
         ></img>
         <p className="paragraph">
           A* aims to find the shortest path from the start node to the end node.
@@ -33,6 +34,7 @@ export default class AboutAstar extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/Astar.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             A*
           </a>

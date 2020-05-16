@@ -15,6 +15,7 @@ export default class Tutorial extends Component {
         <img
           className="welcome-image"
           src={require("./../../gifs//destination.gif")}
+          alt="Welcome"
         ></img>
         <h6>This short tutorial will take you through the application.</h6>
         <p className="paragraph">

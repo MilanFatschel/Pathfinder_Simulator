@@ -58,25 +58,21 @@ export default class Display extends Component {
       grid,
       startNode,
       endNode,
-      mouseHoldsStart,
-      mouseHoldsEnd,
       disableClicking,
     } = this.state;
-
-    const { tutorialEnabled } = this.props;
 
     // Alogrithm/tutorial in progress don't allow clicking
     if (disableClicking || windowIsOpened) return;
     // Check to see if the mouse clicked on the start
     // or end point
-    if (row == startNode.row && col == startNode.col) {
+    if (row === startNode.row && col === startNode.col) {
       this.setState({
         mouseIsPressed: true,
         mouseHoldsStart: true,
         savedGrid: grid,
         startCancelPos: { row: row, col: col },
       });
-    } else if (row == endNode.row && col == endNode.col) {
+    } else if (row === endNode.row && col === endNode.col) {
       this.setState({
         mouseIsPressed: true,
         mouseHoldsEnd: true,
@@ -94,10 +90,10 @@ export default class Display extends Component {
 
     // If the user releases the start or end on a grid
     // set the start on that grid
-    const { grid, startCancelPos, endCancelPos } = this.state;
+    const { grid, mouseHoldsStart, mouseHoldsEnd, startCancelPos, endCancelPos } = this.state;
     const currentNode = grid[row][col];
 
-    if (this.state.mouseHoldsStart) {
+    if (mouseHoldsStart) {
       // Check to see if the grid spot is already occupied
       // if so cancel
       if (currentNode.isEndNode || currentNode.isObstacle) {
@@ -116,7 +112,7 @@ export default class Display extends Component {
         return;
       }
       this.setState({ startNode: currentNode });
-    } else if (this.state.mouseHoldsEnd) {
+    } else if (mouseHoldsEnd) {
       if (currentNode.isStartNode || currentNode.isObstacle) {
         const newGrid = getNewGridWithNewEnd(
           this.state.grid,
@@ -251,11 +247,11 @@ export default class Display extends Component {
         const newNode = createNewNode(row, col);
         // If the position is at the designated start
         // or end, add the start and node to that cell
-        if (row == startPos.row && col == startPos.col) {
+        if (row === startPos.row && col === startPos.col) {
           newNode.isStartNode = true;
           this.setState({ startNode: newNode });
         }
-        if (row == endPos.row && col == endPos.col) {
+        if (row === endPos.row && col === endPos.col) {
           newNode.isEndNode = true;
           this.setState({ endNode: newNode });
         }
@@ -284,8 +280,8 @@ export default class Display extends Component {
     for (let row = 0; row < GRID_ROW_LENGTH; row++) {
       for (let col = 0; col < GRID_COL_LENGTH; col++) {
         if (
-          (startPos.row == row && startPos.col == col) ||
-          (endPos.row == row && endPos.col == col)
+          (startPos.row === row && startPos.col === col) ||
+          (endPos.row === row && endPos.col === col)
         ) {
           continue;
         }
@@ -332,17 +328,18 @@ export default class Display extends Component {
     this.setState({ disableClicking: true, cancelSearch: false });
     // Grab our values and call the animate function for visualization
     const { activeAlgorithm } = this.props;
+    var visitedNodesInOrder = []
 
-    if (activeAlgorithm == "A*")
+    if (activeAlgorithm === "A*")
       visitedNodesInOrder = astar(grid, startNode, endNode);
-    else if (activeAlgorithm == "Dijkstra")
-      var visitedNodesInOrder = dijkstra(grid, startNode, endNode);
-    else if (activeAlgorithm == "GBF")
-      var visitedNodesInOrder = greedybestfirst(grid, startNode, endNode);
-    else if (activeAlgorithm == "BFS")
-      var visitedNodesInOrder = bfs(grid, startNode, endNode);
-    else if (activeAlgorithm == "DFS")
-      var visitedNodesInOrder = dfs(grid, startNode, endNode);
+    else if (activeAlgorithm === "Dijkstra")
+      visitedNodesInOrder = dijkstra(grid, startNode, endNode);
+    else if (activeAlgorithm === "GBF")
+      visitedNodesInOrder = greedybestfirst(grid, startNode, endNode);
+    else if (activeAlgorithm === "BFS")
+      visitedNodesInOrder = bfs(grid, startNode, endNode);
+    else if (activeAlgorithm === "DFS")
+      visitedNodesInOrder = dfs(grid, startNode, endNode);
 
     const shortestPathInOrder = getResultPath(endNode);
     this.animateNodeList(visitedNodesInOrder, shortestPathInOrder);
@@ -536,7 +533,7 @@ const getNewGridWithNewEnd = (grid, row, col) => {
 const getResultPath = (endNode) => {
   // Check to see if there is a path
   // if not just return an empty array
-  if (endNode.parentNode == null) return [];
+  if (endNode.parentNode === null) return [];
 
   // Get the shortest path by backtracking
   // each node

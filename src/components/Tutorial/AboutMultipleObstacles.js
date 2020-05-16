@@ -19,6 +19,7 @@ export default class AboutMultipleObstacles extends Component {
         <img
           className="tutorial-image"
           src={require("./../../gifs/dragobstacle.gif")}
+          alt="Mutliple obstacles example"
         ></img>
         <div className="page">4/12</div>
         <button

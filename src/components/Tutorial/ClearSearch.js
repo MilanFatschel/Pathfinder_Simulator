@@ -18,6 +18,7 @@ export default class ClearSearch extends Component {
         <img
           className="button-image"
           src={require("./../../gifs/clear.gif")}
+          alt="Clear example"
         ></img>
         <div className="page">9/12</div>
         <button

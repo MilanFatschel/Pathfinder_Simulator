@@ -19,6 +19,7 @@ export default class ChooseAlgorithm extends Component {
         <img
           className="dropdown-image-algorithm"
           src={require("./../../gifs/choosealgorithm.gif")}
+          alt="Choose algorithm example"
         ></img>
         <div className="page">6/12</div>
         <button

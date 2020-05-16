@@ -19,6 +19,7 @@ export default class AboutEndPoints extends Component {
         <img
           className="tutorial-image"
           src={require("./../../gifs/dragstartend.gif")}
+          alt="Start and end points example"
         ></img>
         <div className="page">5/12</div>
         <button

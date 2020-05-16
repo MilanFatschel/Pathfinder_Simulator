@@ -15,6 +15,7 @@ export default class AboutHeap extends Component {
         <img
           className="heap-image"
           src={require("./../../gifs/heap.gif")}
+          alt="Heap example"
         ></img>
         <p className="paragraph">
           The heap can be thought of as an efficient structure that keeps track
@@ -32,6 +33,7 @@ export default class AboutHeap extends Component {
           <a
             href="https://github.com/ignlg/heap-js/blob/master/dist/heap-js.es5.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Heap
           </a>

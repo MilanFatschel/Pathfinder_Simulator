@@ -15,6 +15,7 @@ export default class AboutBFS extends Component {
         <img
           className="algorithm-image"
           src={require("./../../gifs/bfsslow.gif")}
+          alt="BFS example"
         ></img>
         <p className="paragraph">
           Breadth-First-Search aims to find the shortest path from the start
@@ -33,6 +34,7 @@ export default class AboutBFS extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/BFS.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Breath-First-Search
           </a>

@@ -15,6 +15,7 @@ export default class AboutStack extends Component {
         <img
           className="stack-image"
           src={require("./../../gifs/stack.gif")}
+          alt="Stack example"
         ></img>
         <p className="paragraph">
           The stack can be thought of a physical stack of books. As you place
@@ -31,6 +32,7 @@ export default class AboutStack extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/structures/Stack.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Stack
           </a>

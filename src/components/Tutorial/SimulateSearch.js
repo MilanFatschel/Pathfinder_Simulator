@@ -20,6 +20,7 @@ export default class SimulateSearch extends Component {
         <img
           className="button-image"
           src={require("./../../gifs/simulate.gif")}
+          alt="Simulate example"
         ></img>
         <div className="page">8/12</div>
         <button

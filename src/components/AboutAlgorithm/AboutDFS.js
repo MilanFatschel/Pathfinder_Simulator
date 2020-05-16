@@ -15,6 +15,7 @@ export default class AboutDFS extends Component {
         <img
           className="algorithm-image"
           src={require("./../../gifs/dfsslow.gif")}
+          alt="DFS example"
         ></img>
         <p className="paragraph">
           The Depth-First-Search, while very applicable and useful in many
@@ -31,6 +32,7 @@ export default class AboutDFS extends Component {
           <a
             href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/DFS.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Depth-First-Search
           </a>

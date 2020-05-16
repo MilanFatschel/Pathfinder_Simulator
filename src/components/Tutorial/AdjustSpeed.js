@@ -19,6 +19,7 @@ export default class AdjustSpeed extends Component {
         <img
           className="dropdown-image-speed"
           src={require("./../../gifs/adjustspeed.gif")}
+          alt="Adjust speed example"
         ></img>
         <div className="page">7/12</div>
         <button

@@ -1,6 +1,6 @@
 // Custom stack implementation
 
-import React, { Component } from "react";
+import { Component } from "react";
 
 export default class Stack extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class Stack extends Component {
 
   isEmpty() {
     // return true if the queue is empty.
-    return this.state.items.length == 0;
+    return this.state.items.length === 0;
   }
 
   render() {

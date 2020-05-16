@@ -20,7 +20,7 @@ export default class Conclusion extends Component {
         <p className="paragraph">
           This repo can be found at:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/"
             target="_blank"
           >
             GitHub Link

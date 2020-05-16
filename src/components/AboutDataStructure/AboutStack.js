@@ -29,7 +29,7 @@ export default class AboutStack extends Component {
           algorithm.
           <br /> The code for the implemented stack can be found here:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator/blob/master/src/structures/Stack.js"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/structures/Stack.js"
             target="_blank"
           >
             Stack

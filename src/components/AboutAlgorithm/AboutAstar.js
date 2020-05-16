@@ -31,7 +31,7 @@ export default class AboutAstar extends Component {
           between Dijkstra and Greedy.
           <br /> The code for the implementation of A* can be found here:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator/blob/master/src/algorithms/Astar.js"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/Astar.js"
             target="_blank"
           >
             A*

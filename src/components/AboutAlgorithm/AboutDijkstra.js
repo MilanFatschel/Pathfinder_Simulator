@@ -34,7 +34,7 @@ export default class AboutDijkstra extends Component {
           <br /> The code for the implementation of Dijkstra can be found
           here:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator/blob/master/src/algorithms/Dijkstra.js"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/Dijkstra.js"
             target="_blank"
           >
             Dijkstra

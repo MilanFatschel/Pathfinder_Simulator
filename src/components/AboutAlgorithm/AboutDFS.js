@@ -29,7 +29,7 @@ export default class AboutDFS extends Component {
           provides a nice visual of how the algorithm searches graphs.
           <br /> The code for the implementation of DFS can be found here:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator/blob/master/src/algorithms/DFS.js"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/DFS.js"
             target="_blank"
           >
             Depth-First-Search

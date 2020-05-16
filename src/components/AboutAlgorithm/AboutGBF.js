@@ -34,7 +34,7 @@ export default class AboutGBF extends Component {
           <br /> The code for the implementation of Greedy-Best-First can be
           found here:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator/blob/master/src/algorithms/GreedyBestFirst.js"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/GreedyBestFirst.js"
             target="_blank"
           >
             Greedy-Best-First

@@ -31,7 +31,7 @@ export default class AboutBFS extends Component {
           path.
           <br /> The code for the implementation of BFS can be found here:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator/blob/master/src/algorithms/BFS.js"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/algorithms/BFS.js"
             target="_blank"
           >
             Breath-First-Search

@@ -29,7 +29,7 @@ export default class AboutQueue extends Component {
           Breadth-First-Search algorithm.
           <br /> The code for the implemented queue can be found here:&nbsp;
           <a
-            href="https://github.com/MilanFatschel/Pathfinder_Algorithm_Simulator/blob/master/src/structures/Queue.js"
+            href="https://github.com/MilanFatschel/Pathfinder_Simulator/blob/master/src/structures/Queue.js"
             target="_blank"
           >
             Queue

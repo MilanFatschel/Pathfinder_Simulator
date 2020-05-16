@@ -393,6 +393,7 @@ export default class NavigationBar extends Component {
                   href="#"
                   onClick={(e) => {
                     this.props.createTutorialEvent();
+                    this.setState({ activeDropDown: null });
                   }}
                 >
                   Instructions <span className="sr-only">(current)</span>

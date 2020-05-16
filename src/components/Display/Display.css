@@ -1,0 +1,82 @@
+.grid {
+  text-align: center;
+  font-size: 0;
+}
+
+.button-panel-container {
+  text-align: center;
+  align-items: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+
+.button-panel {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(52, 58, 65);
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 50px;
+}
+.button-group {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 18%;
+}
+
+.button-simulate {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: relative;
+  width: 15%;
+  height: 60%;
+  font-size: 2vmin;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.button-simulate-red {
+  color: #ffffff;
+  background-color: red;
+  position: relative;
+  width: 15%;
+  height: 60%;
+  font-size: 2vmin;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.button-reset {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: relative;
+  width: 25%;
+  height: 60%;
+  font-size: 2vmin;
+}
+
+.button-clear {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: relative;
+  width: 15%;
+  height: 60%;
+  font-size: 2vmin;
+}
+
+.button-randomize {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: relative;
+  width: 30%;
+  height: 60%;
+  font-size: 2vmin;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

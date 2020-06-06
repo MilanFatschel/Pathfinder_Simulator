@@ -4,14 +4,17 @@
   background-color: white;
   outline: 1px solid rgba(157, 214, 214, 0.75);
   display: inline-flex;
+  cursor: pointer;
 }
 
 .node-start {
   background-color: green;
+  cursor: pointer;
 }
 
 .node-end {
   background-color: red;
+  cursor: pointer;
 }
 
 .node-visited {
@@ -24,10 +27,12 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
+  cursor: pointer;
 }
 
 .node-obstacle {
   background-color: rgb(20, 42, 75);
+  cursor: pointer;
 }
 
 .node-shortest-path {
@@ -40,6 +45,7 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
+  cursor: pointer;
 }
 
 @keyframes visitedAnimation {

@@ -59,10 +59,12 @@ export default class Display extends Component {
       startNode,
       endNode,
       disableClicking,
+      mouseHoldsStart,
+      mouseHoldsEnd
     } = this.state;
 
     // Alogrithm/tutorial in progress don't allow clicking
-    if (disableClicking || windowIsOpened) return;
+    if (disableClicking || windowIsOpened || mouseHoldsStart || mouseHoldsEnd) return;
     // Check to see if the mouse clicked on the start
     // or end point
     if (row === startNode.row && col === startNode.col) {

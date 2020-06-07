@@ -130,12 +130,12 @@ export default class NavigationBar extends Component {
                 </a>
                 <div
                   className={classAlgoDropdownMenu}
-                  href="/#"
+                  style={{cursor: "pointer"}}
                   aria-labelledby="navbarDropdown"
                 >
                   <a
                     className={classAstarActive}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "A*");
                       this.setState({ activeDropDown: null });
@@ -145,7 +145,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classDijkstraActive}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "Dijkstra");
                       this.setState({ activeDropDown: null });
@@ -155,7 +155,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classGBFActive}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "GBF");
                       this.setState({ activeDropDown: null });
@@ -165,7 +165,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classBFSActive}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "BFS");
                       this.setState({ activeDropDown: null });
@@ -175,7 +175,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classDFSActive}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickAlgorithm(e, "DFS");
                       this.setState({ activeDropDown: null });
@@ -188,7 +188,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item dropdown">
                 <a
                   className={classNavBarLink}
-                  href="/#"
+                  style={{cursor: "pointer"}}
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -206,7 +206,7 @@ export default class NavigationBar extends Component {
                 >
                   <a
                     className={classSpeed25Active}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 0.25);
                       this.setState({ activeDropDown: null });
@@ -216,7 +216,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed50Active}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 0.5);
                       this.setState({ activeDropDown: null });
@@ -226,7 +226,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed75Active}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 0.75);
                       this.setState({ activeDropDown: null });
@@ -236,7 +236,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed100Active}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 1.0);
                       this.setState({ activeDropDown: null });
@@ -246,7 +246,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed200Active}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 2.0);
                       this.setState({ activeDropDown: null });
@@ -256,7 +256,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className={classSpeed400Active}
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={(e) => {
                       this.props.onClickSpeed(e, 4.0);
                       this.setState({ activeDropDown: null });
@@ -269,7 +269,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item dropdown">
                 <a
                   className={classNavBarLink}
-                  href="/#"
+                  style={{cursor: "pointer"}}
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -287,7 +287,7 @@ export default class NavigationBar extends Component {
                 >
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("A*");
                       this.setState({ activeDropDown: null });
@@ -297,7 +297,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("Dijkstra");
                       this.setState({ activeDropDown: null });
@@ -307,7 +307,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("GBF");
                       this.setState({ activeDropDown: null });
@@ -317,7 +317,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("BFS");
                       this.setState({ activeDropDown: null });
@@ -327,7 +327,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutAlgorithm("DFS");
                       this.setState({ activeDropDown: null });
@@ -340,7 +340,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item dropdown">
                 <a
                   className={classNavBarLink}
-                  href="/#"
+                  style={{cursor: "pointer"}}
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -358,7 +358,7 @@ export default class NavigationBar extends Component {
                 >
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutDataStructure("Stack");
                       this.setState({ activeDropDown: null });
@@ -368,7 +368,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutDataStructure("Queue");
                       this.setState({ activeDropDown: null });
@@ -378,7 +378,7 @@ export default class NavigationBar extends Component {
                   </a>
                   <a
                     className="dropdown-item"
-                    href="/#"
+                    style={{cursor: "pointer"}}
                     onClick={() => {
                       this.props.onClickAboutDataStructure("Heap");
                       this.setState({ activeDropDown: null });
@@ -391,7 +391,7 @@ export default class NavigationBar extends Component {
               <li className="nav-item">
                 <a
                   className={classNavButton}
-                  href="/#"
+                  style={{cursor: "pointer"}}
                   onClick={(e) => {
                     this.props.createTutorialEvent();
                     this.setState({ activeDropDown: null });

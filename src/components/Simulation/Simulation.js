@@ -16,6 +16,7 @@ export default class Simulation extends Component {
       aboutDataStructure: "",
       simulatorSpeed: 1.0,
       tutorialEnabled: true,
+      mouseHold: false
     };
     this.onClickAlgorithm = this.onClickAlgorithm.bind(this);
     this.onClickSpeed = this.onClickSpeed.bind(this);
@@ -25,6 +26,9 @@ export default class Simulation extends Component {
     this.closeTutorial = this.closeTutorial.bind(this);
     this.closeAboutAlgorithm = this.closeAboutAlgorithm.bind(this);
     this.closeAboutDataStructure = this.closeAboutDataStructure.bind(this);
+    this.mouseHoldOnEvent = this.mouseHoldOnEvent.bind(this);
+    this.mouseHoldOffEvent = this.mouseHoldOffEvent.bind(this);
+
   }
 
   onComponentDidMount() {}
@@ -75,9 +79,20 @@ export default class Simulation extends Component {
     this.setState({ tutorialEnabled: false });
   }
 
+  // Mouse Holds
+  mouseHoldOnEvent() {
+    this.setState({ mouseHold: true})
+
+  }
+
+  mouseHoldOffEvent() {
+    this.setState({ mouseHold: false})
+  }
+
   render() {
     const {
       tutorialEnabled,
+      mouseHold,
       aboutAlgorithmEnabled,
       aboutDataStructureEnabled,
       aboutAlgorithm,
@@ -111,6 +126,7 @@ export default class Simulation extends Component {
         )}
         <Navigationbar
           tutorialEnabled={tutorialEnabled}
+          mouseHold={mouseHold}
           aboutAlgorithmEnabled={aboutAlgorithmEnabled}
           aboutDataStructureEnabled={aboutDataStructureEnabled}
           activeAlgorithm={activeAlgorithm}
@@ -128,6 +144,8 @@ export default class Simulation extends Component {
           aboutDataStructureEnabled={aboutDataStructureEnabled}
           activeAlgorithm={activeAlgorithm}
           simulatorSpeed={simulatorSpeed}
+          mouseHoldOnEvent={this.mouseHoldOnEvent}
+          mouseHoldOffEvent={this.mouseHoldOffEvent}
         ></Display>
       </div>
     );

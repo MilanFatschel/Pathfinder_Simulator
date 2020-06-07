@@ -20,7 +20,7 @@ export default class AboutDFS extends Component {
         <p className="paragraph">
           The Depth-First-Search, while very applicable and useful in many
           situations, is not a great algorithm for pathfinding. The DFS has the
-          characteristic of exploring whatever it sees first. This results in no
+          characteristic of exploring whatever it sees first. This produces no
           real direction and a guess of where the end node is. The result is a
           random path as the DFS will eventually reach the end as it seaches all
           nodes and updates its parents. A stack or recursion is used to keep

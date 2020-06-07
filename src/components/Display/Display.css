@@ -61,6 +61,15 @@
   font-size: 2vmin;
 }
 
+.button-reset-red {
+  color: #ffffff;
+  background-color: red;
+  position: relative;
+  width: 25%;
+  height: 60%;
+  font-size: 2vmin;
+}
+
 .button-clear {
   color: #ffffff;
   background-color: #1abc9c;
@@ -70,9 +79,29 @@
   font-size: 2vmin;
 }
 
+.button-clear-red {
+  color: #ffffff;
+  background-color: red;
+  position: relative;
+  width: 15%;
+  height: 60%;
+  font-size: 2vmin;
+}
+
 .button-randomize {
   color: #ffffff;
   background-color: #1abc9c;
+  position: relative;
+  width: 30%;
+  height: 60%;
+  font-size: 2vmin;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.button-randomize-red {
+  color: #ffffff;
+  background-color: red;
   position: relative;
   width: 30%;
   height: 60%;

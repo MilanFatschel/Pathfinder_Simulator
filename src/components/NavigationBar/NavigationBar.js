@@ -34,18 +34,19 @@ export default class NavigationBar extends Component {
   render() {
     const {
       tutorialEnabled,
+      mouseHold,
       aboutAlgorithmEnabled,
       aboutDataStructureEnabled,
     } = this.props;
 
     // Navbar enababled/disabled
     const classNavBarLink =
-      tutorialEnabled || aboutAlgorithmEnabled || aboutDataStructureEnabled
+      tutorialEnabled || mouseHold || aboutAlgorithmEnabled || aboutDataStructureEnabled
         ? "nav-link disabled dropdown-toggle"
         : "nav-link dropdown-toggle";
 
     const classNavButton =
-      tutorialEnabled || aboutAlgorithmEnabled || aboutDataStructureEnabled
+      tutorialEnabled || mouseHold || aboutAlgorithmEnabled || aboutDataStructureEnabled
         ? "nav-link disabled"
         : "nav-link";
 
@@ -114,7 +115,7 @@ export default class NavigationBar extends Component {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item dropdown">
                 <a
-                  class={classNavBarLink}
+                  className={classNavBarLink}
                   href="/#"
                   id="navbarDropdown"
                   role="button"

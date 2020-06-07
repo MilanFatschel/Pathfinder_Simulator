@@ -60,7 +60,7 @@ export default class Display extends Component {
       endNode,
       disableClicking,
       mouseHoldsStart,
-      mouseHoldsEnd
+      mouseHoldsEnd,
     } = this.state;
 
     // Alogrithm/tutorial in progress don't allow clicking
@@ -74,12 +74,14 @@ export default class Display extends Component {
         savedGrid: grid,
         startCancelPos: { row: row, col: col },
       });
+      this.props.mouseHoldOnEvent();
     } else if (row === endNode.row && col === endNode.col) {
       this.setState({
         mouseIsPressed: true,
         mouseHoldsEnd: true,
         endCancelPos: { row: row, col: col },
       });
+      this.props.mouseHoldOnEvent();
     } else {
       const newGrid = getNewGridWithToggledObstacle(this.state.grid, row, col);
       this.setState({ grid: newGrid, mouseIsPressed: true });
@@ -92,8 +94,16 @@ export default class Display extends Component {
 
     // If the user releases the start or end on a grid
     // set the start on that grid
-    const { grid, mouseHoldsStart, mouseHoldsEnd, startCancelPos, endCancelPos } = this.state;
+    const { grid, mouseHoldsStart, mouseHoldsEnd, startCancelPos, endCancelPos} = this.state;
+    const {
+      tutorialEnabled,
+      aboutAlgorithmEnabled,
+      aboutDataStructureEnabled,
+    } = this.props;
     const currentNode = grid[row][col];
+
+    // Dont allow dropping on tutorial - edge case
+    if(tutorialEnabled || aboutAlgorithmEnabled || aboutDataStructureEnabled) return;
 
     if (mouseHoldsStart) {
       // Check to see if the grid spot is already occupied
@@ -111,6 +121,7 @@ export default class Display extends Component {
           grid: newGrid,
           startNode: grid[startCancelPos.row][startCancelPos.col],
         });
+        this.props.mouseHoldOffEvent();
         return;
       }
       this.setState({ startNode: currentNode });
@@ -128,6 +139,7 @@ export default class Display extends Component {
           grid: newGrid,
           endNode: grid[endCancelPos.row][endCancelPos.col],
         });
+        this.props.mouseHoldOffEvent();
         return;
       }
       this.setState({ endNode: currentNode });
@@ -138,6 +150,7 @@ export default class Display extends Component {
       mouseHoldsEnd: false,
       mouseIsPressed: false,
     });
+    this.props.mouseHoldOffEvent();
   }
 
   handleMouseOut(row, col) {
@@ -379,6 +392,8 @@ export default class Display extends Component {
       startNode,
       endNode,
       disableClicking,
+      mouseHoldsStart,
+      mouseHoldsEnd
     } = this.state;
 
     const {
@@ -390,9 +405,19 @@ export default class Display extends Component {
     const windowIsOpened =
       tutorialEnabled || aboutAlgorithmEnabled || aboutDataStructureEnabled;
 
-    const simulatorClassName = disableClicking
+    const simulatorClassName = disableClicking || mouseHoldsStart || mouseHoldsEnd
       ? "button-simulate-red"
       : "button-simulate";
+    const clearClassName = mouseHoldsStart || mouseHoldsEnd
+      ? "button-clear-red"
+      : "button-clear";
+    const resetClassName = mouseHoldsStart || mouseHoldsEnd
+      ? "button-reset-red"
+      : "button-reset";
+    const randomizeClassName = mouseHoldsStart || mouseHoldsEnd
+      ? "button-randomize-red"
+      : "button-randomize";      
+    
     return (
       <>
         <div className="button-panel-container">
@@ -403,40 +428,40 @@ export default class Display extends Component {
                 onClick={() => {
                   this.visualizeAlgorithm(grid, startNode, endNode);
                 }}
-                disabled={disableClicking || windowIsOpened}
+                disabled={disableClicking || windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
               >
                 Simulate
               </button>
               <button
-                className="button-clear"
+                className={clearClassName}
                 onClick={() => {
                   this.cancelTimeouts();
                   this.resetGridStyles(grid);
                   this.resetPath();
                 }}
-                disabled={windowIsOpened}
+                disabled={windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
               >
                 Reset Path
               </button>
               <button
-                className="button-reset"
+                className={resetClassName}
                 onClick={() => {
                   this.cancelTimeouts();
                   this.resetGridStyles(grid);
                   this.resetObstacles();
                 }}
-                disabled={windowIsOpened}
+                disabled={windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
               >
                 Reset Obstacles
               </button>
               <button
-                className="button-randomize"
+                className={randomizeClassName}
                 onClick={() => {
                   this.cancelTimeouts();
                   this.resetGridStyles(grid);
                   this.randomizeObstacles();
                 }}
-                disabled={windowIsOpened}
+                disabled={windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
               >
                 Randomize Obstacles
               </button>

@@ -39,7 +39,6 @@ export function astar(grid, startNode, endNode) {
     // Make sure our list is not empty
     if (nodeHeap.length > 0) {
       // Mark current node as visited, add to visited array
-      console.log(nodeHeap.length);
       const currentNode = nodeHeap.peek();
       currentNode.isVisited = true;
 

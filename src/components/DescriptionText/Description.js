@@ -10,7 +10,7 @@ export default class Description extends Component {
 
   getAlgorithmDescription(algorithm) {
     if (algorithm === "A*")
-      return "A*: the balance of Greedy and Dijkstra. Uses both the start and end node to expand based on a heuristic. Returns the shortest path.";
+      return "A*: a balance of Greedy and Dijkstra. Uses both the start and end node to expand based on a heuristic. Returns the shortest path.";
     else if (algorithm === "Dijkstra")
       return "Dijkstra: stays as close as possible to the start node and expands outwards. Returns the shortest path.";
     else if (algorithm === "GBF")

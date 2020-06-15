@@ -1,3 +1,7 @@
+# Pathfinder Simulator 
+visit https://milanfatschel.github.io/Pathfinder_Simulator/ to see the project live!
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

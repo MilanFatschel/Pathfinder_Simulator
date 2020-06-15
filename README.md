@@ -1,6 +1,7 @@
+![Pathfinder_Simulator](https://user-images.githubusercontent.com/31837228/84710665-aa620e80-af32-11ea-9bd5-16133c9dc8b2.png)
+
 # Pathfinder Simulator 
 visit https://milanfatschel.github.io/Pathfinder_Simulator/ to see the project live!
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

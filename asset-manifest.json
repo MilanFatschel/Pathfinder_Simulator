@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Pathfinder_Simulator/static/css/main.fef6bef6.chunk.css",
-    "main.js": "/Pathfinder_Simulator/static/js/main.1c24f5c5.chunk.js",
-    "main.js.map": "/Pathfinder_Simulator/static/js/main.1c24f5c5.chunk.js.map",
+    "main.css": "/Pathfinder_Simulator/static/css/main.96fd3978.chunk.css",
+    "main.js": "/Pathfinder_Simulator/static/js/main.98be2e9e.chunk.js",
+    "main.js.map": "/Pathfinder_Simulator/static/js/main.98be2e9e.chunk.js.map",
     "runtime-main.js": "/Pathfinder_Simulator/static/js/runtime-main.c3fabc25.js",
     "runtime-main.js.map": "/Pathfinder_Simulator/static/js/runtime-main.c3fabc25.js.map",
     "static/css/2.69121389.chunk.css": "/Pathfinder_Simulator/static/css/2.69121389.chunk.css",
-    "static/js/2.81f16e37.chunk.js": "/Pathfinder_Simulator/static/js/2.81f16e37.chunk.js",
-    "static/js/2.81f16e37.chunk.js.map": "/Pathfinder_Simulator/static/js/2.81f16e37.chunk.js.map",
+    "static/js/2.480deabe.chunk.js": "/Pathfinder_Simulator/static/js/2.480deabe.chunk.js",
+    "static/js/2.480deabe.chunk.js.map": "/Pathfinder_Simulator/static/js/2.480deabe.chunk.js.map",
     "index.html": "/Pathfinder_Simulator/index.html",
-    "precache-manifest.dc231a888f633ae7d9cc645178a3edc4.js": "/Pathfinder_Simulator/precache-manifest.dc231a888f633ae7d9cc645178a3edc4.js",
+    "precache-manifest.366b8db839acee368f09502258b8a216.js": "/Pathfinder_Simulator/precache-manifest.366b8db839acee368f09502258b8a216.js",
     "service-worker.js": "/Pathfinder_Simulator/service-worker.js",
     "static/css/2.69121389.chunk.css.map": "/Pathfinder_Simulator/static/css/2.69121389.chunk.css.map",
-    "static/css/main.fef6bef6.chunk.css.map": "/Pathfinder_Simulator/static/css/main.fef6bef6.chunk.css.map",
-    "static/js/2.81f16e37.chunk.js.LICENSE.txt": "/Pathfinder_Simulator/static/js/2.81f16e37.chunk.js.LICENSE.txt",
+    "static/css/main.96fd3978.chunk.css.map": "/Pathfinder_Simulator/static/css/main.96fd3978.chunk.css.map",
+    "static/js/2.480deabe.chunk.js.LICENSE.txt": "/Pathfinder_Simulator/static/js/2.480deabe.chunk.js.LICENSE.txt",
     "static/media/adjustspeed.gif": "/Pathfinder_Simulator/static/media/adjustspeed.aea4ee89.gif",
     "static/media/astarslow.gif": "/Pathfinder_Simulator/static/media/astarslow.9df4bd54.gif",
     "static/media/bfs.gif": "/Pathfinder_Simulator/static/media/bfs.9542cb4a.gif",
@@ -37,8 +37,8 @@
   "entrypoints": [
     "static/js/runtime-main.c3fabc25.js",
     "static/css/2.69121389.chunk.css",
-    "static/js/2.81f16e37.chunk.js",
-    "static/css/main.fef6bef6.chunk.css",
-    "static/js/main.1c24f5c5.chunk.js"
+    "static/js/2.480deabe.chunk.js",
+    "static/css/main.96fd3978.chunk.css",
+    "static/js/main.98be2e9e.chunk.js"
   ]
 }

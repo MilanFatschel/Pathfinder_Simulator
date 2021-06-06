@@ -19,23 +19,13 @@
   padding: 15px;
   font-size: x-large;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .title {
   font-weight: bold;
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.body img {
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
 
 @media only screen and (max-width: 1200px) {
   .tutorial {
@@ -53,13 +43,13 @@
 }
 @media only screen and (max-width: 425px) {
   .tutorial {
-    width: 200px;
+    width: 300px;
     height: 400px;
     font-size: small;
   }
 }
 
-.header {
+.header-t {
   display: flex;
   width: 100%;
   height: 10%;
@@ -67,13 +57,21 @@
   justify-content: center;
 }
 
-.body {
+.body-t {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 83%;
+  overflow-y: auto;
+  padding: 20px;
 }
 
-.footer {
+.body-t img {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.footer-t {
   display: flex;
   width: 100%;
   height:7%;

@@ -77,16 +77,16 @@ export default class TutorialDialog extends Component {
 
     return (
       <div className="tutorial">
-        <div className="header">
+        <div className="header-t">
           <div className="title">{title}</div>
           <div id="exit" onClick={this.props.skip}><MdClear size={iconSize}></MdClear></div>
         </div>
-        <div className="body">
+        <div className="body-t">
           {imgRender}
-          <p>{text}</p> 
+          <span>{text}</span> 
           {extraRender}
         </div>
-        <div className="footer">
+        <div className="footer-t">
         {prevButtonRender}
         <div id="pages">{curPageNumber}/{totalPageNumber}</div>
         {nextButtonRender}

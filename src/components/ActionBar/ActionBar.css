@@ -3,7 +3,7 @@
     height: 70px;
     width: 400px;
     background-color: rgb(52, 58, 65);
-    opacity: 50%;
+    opacity: .5;
     border-radius: 20px;
     margin: 50px auto;
     display: flex;

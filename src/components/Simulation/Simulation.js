@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import Navigationbar from "../NavigationBar/NavigationBar";
 import Display from "../Display/Display";
 import Tutorial from "../Tutorial/Tutorial";
-import Description from "../DescriptionText/Description";
-import AboutAlgorithm from "../AboutAlgorithm/AboutAlgorithm";
-import AboutDataStructure from "../AboutDataStructure/AboutDataStructure";
+import AboutAlgorithmsDialog from "../AboutAlgorithms/AboutAlgorithmsDialog";
+import AboutStructuresDialog from "../AboutStructures/AboutStructuresDialog";
 
 export default class Simulation extends Component {
   constructor(props) {
@@ -18,6 +17,7 @@ export default class Simulation extends Component {
       tutorialEnabled: true,
       mouseHold: false
     };
+
     this.onClickAlgorithm = this.onClickAlgorithm.bind(this);
     this.onClickSpeed = this.onClickSpeed.bind(this);
     this.onClickAboutAlgorithm = this.onClickAboutAlgorithm.bind(this);
@@ -28,10 +28,10 @@ export default class Simulation extends Component {
     this.closeAboutDataStructure = this.closeAboutDataStructure.bind(this);
     this.mouseHoldOnEvent = this.mouseHoldOnEvent.bind(this);
     this.mouseHoldOffEvent = this.mouseHoldOffEvent.bind(this);
-
   }
 
-  onComponentDidMount() {}
+  onComponentDidMount() {
+  }
 
   // On Click Events
   createTutorialEvent() {
@@ -109,18 +109,18 @@ export default class Simulation extends Component {
           <div></div>
         )}
         {aboutAlgorithm.length > 0 ? (
-          <AboutAlgorithm
-            aboutAlgorithm={aboutAlgorithm}
-            closeAboutAlgorithm={this.closeAboutAlgorithm}
-          ></AboutAlgorithm>
+          <AboutAlgorithmsDialog
+            algorithm={aboutAlgorithm}
+            skip={this.closeAboutAlgorithm}
+          ></AboutAlgorithmsDialog>
         ) : (
           <div></div>
         )}
         {aboutDataStructure.length > 0 ? (
-          <AboutDataStructure
-            aboutDataStructure={aboutDataStructure}
-            closeAboutDataStructure={this.closeAboutDataStructure}
-          ></AboutDataStructure>
+          <AboutStructuresDialog
+          structure={aboutDataStructure}
+          skip={this.closeAboutDataStructure}
+        ></AboutStructuresDialog>
         ) : (
           <div></div>
         )}
@@ -137,7 +137,6 @@ export default class Simulation extends Component {
           onClickAboutAlgorithm={this.onClickAboutAlgorithm}
           onClickAboutDataStructure={this.onClickAboutDataStructure}
         ></Navigationbar>
-        <Description activeAlgorithm={activeAlgorithm}></Description>
         <Display
           tutorialEnabled={tutorialEnabled}
           aboutAlgorithmEnabled={aboutAlgorithmEnabled}

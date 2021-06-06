@@ -95,7 +95,7 @@ export default class NavigationBar extends Component {
 
     return (
       <div ref={(node) => (this.node = node)}>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark"  style={{userSelect: 'none'}}>
           <a className="navbar-brand" href="/Pathfinder_Simulator">
             Pathfinder Simulator
           </a>

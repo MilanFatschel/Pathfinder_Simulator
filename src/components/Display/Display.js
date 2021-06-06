@@ -1,18 +1,28 @@
 import React, { Component } from "react";
-
 import Node from "./../Node/Node";
 import "./Display.css";
-
 import { astar } from "../../algorithms/Astar";
 import { dijkstra } from "../../algorithms/Dijkstra";
 import { greedybestfirst } from "../../algorithms/GreedyBestFirst";
 import { bfs } from "../../algorithms/BFS";
 import { dfs } from "../../algorithms/DFS";
+import ActionBar from "../ActionBar/ActionBar";
 
 // Constants
-const GRID_ROW_LENGTH = 25;
-const GRID_COL_LENGTH = 60;
+const GRID_ROW_LENGTH_LARGE = 25;
+const GRID_COL_LENGTH_LARGE = 50;
+const GRID_ROW_LENGTH_MEDIUM = 25;
+const GRID_COL_LENGTH_MEDIUM =  30;
+const GRID_ROW_LENGTH_SMALL = 10;
+const GRID_COL_LENGTH_SMALL = 10;
+const GRID_ROW_LENGTH_MOBILE = 18;
+const GRID_COL_LENGTH_MOBILE = 7;
 const SIMULATION_SPEED = 50;
+
+// Break Points 
+const LARGE_BREAK_POINT = 1600;
+const MEDIUM_BREAK_POINT = 1000;
+const SMALL_BREAK_POINT = 425;
 var timeouts = [];
 
 export default class Display extends Component {
@@ -33,16 +43,26 @@ export default class Display extends Component {
   }
 
   componentDidMount() {
-    const startPos = {
-      row: 0,
-      col: 0,
-    };
-    const endPos = {
-      row: GRID_ROW_LENGTH - 1,
-      col: GRID_COL_LENGTH - 1,
-    };
-    const grid = this.createGrid(startPos, endPos);
-    this.setState({ grid });
+    // For checking window size
+    window.addEventListener("resize", this.onWindowResize.bind(this));
+    const grid = this.createGridBasedOnWindowSize(window.innerWidth);
+    this.setState({ 
+      grid
+     });
+  }
+
+  onWindowResize() {
+    // Check Break Points and create a new grid if so 
+    this.resetGridStyles(this.state.grid);
+    this.cancelTimeouts();
+    const grid = this.createGridBasedOnWindowSize(window.innerWidth);
+    this.setState({ 
+      grid,
+      mouseIsPressed: false,
+      mouseHoldsStart: false,
+      mouseHoldsEnd: false,
+      disableClicking: false,
+     });
   }
 
   onTutorialEnabled() {
@@ -241,9 +261,13 @@ export default class Display extends Component {
   }
 
   resetGridStyles(grid) {
+    const rowLength = grid.length;
+    const colLength = grid[0].length
+
     this.setState({ cancelSearch: true });
-    for (let row = 0; row < GRID_ROW_LENGTH; row++) {
-      for (let col = 0; col < GRID_COL_LENGTH; col++) {
+
+    for (let row = 0; row < rowLength; row++) {
+      for (let col = 0; col < colLength; col++) {
         const node = grid[row][col];
         if (!node.isStartNode && !node.isEndNode) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
@@ -253,12 +277,30 @@ export default class Display extends Component {
     }
   }
 
-  createGrid(startPos, endPos) {
+  createGridBasedOnWindowSize(width) {
+    const startPos = { row: 0, col: 0 };
+  
+    if(width >= LARGE_BREAK_POINT) {
+      const endPos = { row: GRID_ROW_LENGTH_LARGE - 1, col: GRID_COL_LENGTH_LARGE - 1};
+      return this.createGrid(startPos, endPos, GRID_ROW_LENGTH_LARGE, GRID_COL_LENGTH_LARGE);
+    } else if(width < LARGE_BREAK_POINT && width >= MEDIUM_BREAK_POINT) {
+      const endPos = { row: GRID_ROW_LENGTH_MEDIUM - 1, col: GRID_COL_LENGTH_MEDIUM - 1};
+      return this.createGrid(startPos, endPos, GRID_ROW_LENGTH_MEDIUM, GRID_COL_LENGTH_MEDIUM);
+    } else if(width < MEDIUM_BREAK_POINT && width >= SMALL_BREAK_POINT) {
+      const endPos = { row: GRID_ROW_LENGTH_SMALL - 1, col: GRID_COL_LENGTH_SMALL - 1};
+      return this.createGrid(startPos, endPos, GRID_ROW_LENGTH_SMALL, GRID_COL_LENGTH_SMALL);
+    } else {
+      const endPos = { row: GRID_ROW_LENGTH_MOBILE - 1, col: GRID_COL_LENGTH_MOBILE - 1};
+        return this.createGrid(startPos, endPos, GRID_ROW_LENGTH_MOBILE, GRID_COL_LENGTH_MOBILE);
+    }
+  }
+
+  createGrid(startPos, endPos, rowLength, colLength) {
     // Create a new grid which holds nodes
     const grid = [];
-    for (let row = 0; row < GRID_ROW_LENGTH; row++) {
+    for (let row = 0; row < rowLength; row++) {
       const currentRow = [];
-      for (let col = 0; col < GRID_COL_LENGTH; col++) {
+      for (let col = 0; col < colLength; col++) {
         const newNode = createNewNode(row, col);
         // If the position is at the designated start
         // or end, add the start and node to that cell
@@ -280,7 +322,7 @@ export default class Display extends Component {
   }
 
   randomizeObstacles() {
-    const { startNode, endNode } = this.state;
+    const { startNode, endNode, grid } = this.state;
 
     const startPos = {
       row: startNode.row,
@@ -290,10 +332,14 @@ export default class Display extends Component {
       row: endNode.row,
       col: endNode.col,
     };
-    const newGrid = this.createGrid(startPos, endPos);
 
-    for (let row = 0; row < GRID_ROW_LENGTH; row++) {
-      for (let col = 0; col < GRID_COL_LENGTH; col++) {
+    const rowLength = grid.length;
+    const colLength = grid[0].length
+
+    const newGrid = this.createGrid(startPos, endPos, rowLength, colLength);
+
+    for (let row = 0; row < rowLength; row++) {
+      for (let col = 0; col < colLength; col++) {
         if (
           (startPos.row === row && startPos.col === col) ||
           (endPos.row === row && endPos.col === col)
@@ -323,10 +369,13 @@ export default class Display extends Component {
       col: endNode.col,
     };
 
-    const newGrid = this.createGrid(startPos, endPos);
+    const rowLength = grid.length;
+    const colLength = grid[0].length
 
-    for (let row = 0; row < GRID_ROW_LENGTH; row++) {
-      for (let col = 0; col < GRID_COL_LENGTH; col++) {
+    const newGrid = this.createGrid(startPos, endPos, rowLength, colLength);
+
+    for (let row = 0; row < rowLength; row++) {
+      for (let col = 0; col < colLength; col++) {
         const node = newGrid[row][col];
         node.isObstacle = grid[row][col].isObstacle;
         if (node.isObstacle) {
@@ -362,17 +411,9 @@ export default class Display extends Component {
 
   resetObstacles() {
     this.setState({ cancelSearch: true });
-    const { startNode, endNode } = this.state;
-    const startPos = {
-      row: startNode.row,
-      col: startNode.col,
-    };
-    const endPos = {
-      row: endNode.row,
-      col: endNode.col,
-    };
+    const { startNode, endNode, grid } = this.state;
 
-    const newGrid = this.createGrid(startPos, endPos);
+    const newGrid = this.createGrid(startNode, endNode, grid.length, grid[0].length);
     const newStart = newGrid[startNode.row][startNode.col];
     const newEnd = newGrid[endNode.row][endNode.col];
     newStart.isStartNode = true;
@@ -383,6 +424,7 @@ export default class Display extends Component {
       grid: newGrid,
       disableClicking: false,
     });
+    this.resetGridStyles(newGrid);
   }
 
   render() {
@@ -404,70 +446,31 @@ export default class Display extends Component {
 
     const windowIsOpened =
       tutorialEnabled || aboutAlgorithmEnabled || aboutDataStructureEnabled;
-
-    const simulatorClassName = disableClicking || mouseHoldsStart || mouseHoldsEnd
-      ? "button-simulate-red"
-      : "button-simulate";
-    const clearClassName = mouseHoldsStart || mouseHoldsEnd
-      ? "button-clear-red"
-      : "button-clear";
-    const resetClassName = mouseHoldsStart || mouseHoldsEnd
-      ? "button-reset-red"
-      : "button-reset";
-    const randomizeClassName = mouseHoldsStart || mouseHoldsEnd
-      ? "button-randomize-red"
-      : "button-randomize";      
+   
     
     return (
       <>
-        <div className="button-panel-container">
-          <div className="button-panel">
-            <div className="button-group">
-              <button
-                className={simulatorClassName}
-                onClick={() => {
-                  this.visualizeAlgorithm(grid, startNode, endNode);
-                }}
-                disabled={disableClicking || windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
-              >
-                Simulate
-              </button>
-              <button
-                className={clearClassName}
-                onClick={() => {
-                  this.cancelTimeouts();
-                  this.resetGridStyles(grid);
-                  this.resetPath();
-                }}
-                disabled={windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
-              >
-                Reset Path
-              </button>
-              <button
-                className={resetClassName}
-                onClick={() => {
-                  this.cancelTimeouts();
-                  this.resetGridStyles(grid);
-                  this.resetObstacles();
-                }}
-                disabled={windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
-              >
-                Reset Obstacles
-              </button>
-              <button
-                className={randomizeClassName}
-                onClick={() => {
-                  this.cancelTimeouts();
-                  this.resetGridStyles(grid);
-                  this.randomizeObstacles();
-                }}
-                disabled={windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
-              >
-                Randomize Obstacles
-              </button>
-            </div>
-          </div>
-        </div>
+        <ActionBar 
+        onPlayClick={() => this.visualizeAlgorithm(grid, startNode, endNode)}
+        onResetPathClick={() => {
+          this.cancelTimeouts();
+          this.resetGridStyles(grid); 
+          this.resetPath();
+        }}
+        onResetObstaclesClick={() => {
+          this.cancelTimeouts();
+          this.resetGridStyles(grid);
+          this.resetObstacles()
+        }}
+        onRandomizeClick={() => {
+          this.cancelTimeouts();
+          this.resetGridStyles(grid);
+          this.randomizeObstacles();
+        }}
+        disablePlay={disableClicking || windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
+        disableOthers = {windowIsOpened || mouseHoldsStart || mouseHoldsEnd}
+        > 
+        </ActionBar>
         <div className="grid">
           {grid.map((row, rowId) => {
             return (
@@ -574,3 +577,4 @@ const getResultPath = (endNode) => {
 
   return shortestPathInOrder;
 };
+

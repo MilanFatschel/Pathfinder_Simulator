@@ -1,6 +1,6 @@
 
 .action-bar-container {
-    height: 70px;
+    height: 65px;
     width: 400px;
     background-color: rgb(52, 58, 65);
     opacity: .5;
@@ -38,13 +38,6 @@
     cursor: not-allowed !important;
 }
 
-
-@media only screen and (max-width: 425px) {
-    .action-bar-container {
-        height: 60px;
-        width: 375px;
-    }
-}
 
 
 

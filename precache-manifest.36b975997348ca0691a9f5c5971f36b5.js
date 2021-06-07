@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7d760df4d4de9ee8a4f68aea773118fb",
+    "revision": "5c7a23df55f768868792708e811e55cc",
     "url": "/Pathfinder_Simulator/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pathfinder_Simulator/static/css/2.69121389.chunk.css"
   },
   {
-    "revision": "1c84ce11b142651dc285",
-    "url": "/Pathfinder_Simulator/static/css/main.ebe33d65.chunk.css"
+    "revision": "6b71655d977bb0ddd672",
+    "url": "/Pathfinder_Simulator/static/css/main.619d173e.chunk.css"
   },
   {
     "revision": "dd1a1517550dab31c47a",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Pathfinder_Simulator/static/js/2.480deabe.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1c84ce11b142651dc285",
+    "revision": "6b71655d977bb0ddd672",
     "url": "/Pathfinder_Simulator/static/js/main.3cda76f9.chunk.js"
   },
   {

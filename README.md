@@ -1,4 +1,4 @@
-![Pathfinder_Simulator](https://user-images.githubusercontent.com/31837228/84710665-aa620e80-af32-11ea-9bd5-16133c9dc8b2.png)
+![Capture](https://user-images.githubusercontent.com/31837228/120940272-69867b00-c6ea-11eb-8eea-2caef448deda.PNG)
 
 # Pathfinder Simulator 
 visit https://milanfatschel.github.io/Pathfinder_Simulator/ to see the project live!

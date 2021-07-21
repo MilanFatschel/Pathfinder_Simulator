@@ -46,7 +46,7 @@ export default class ActionBar extends Component {
       <div className="action-bar-container">
           <div className={disableClass} onClick={this.playClickedHandler}> <FiPlay size={32}></FiPlay> <span>Simulate</span></div>
           <div className={disableOthersClass}onClick={this.resetPathClickHandler}><VscDebugRestartFrame size={32}></VscDebugRestartFrame><span>Reset Path</span></div>
-          <div className={disableOthersClass} onClick={this.resetObstaclesClickHandler}><BiReset size={32}></BiReset><span>Reset Obstacles</span></div>
+          <div className={disableOthersClass} onClick={this.resetObstaclesClickHandler}><BiReset size={32}></BiReset><span>Unblock</span></div>
           <div className={disableOthersClass} style={{'borderRight': 'none'}} onClick={this.randomizeClickHandler}><FaRandom size={32}></FaRandom><span>Randomize</span></div>
       </div>
     );
